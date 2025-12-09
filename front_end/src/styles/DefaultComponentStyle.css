@@ -1,0 +1,20 @@
+/* DefaultComponent.css */
+
+.main-layout {
+
+  background: linear-gradient(to bottom, #111827 0%, #111827 50%, #113a42 100%);
+  color: white;
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-layout .container-wrapper {
+   width: 100%;
+   display: flex;
+   justify-content: center; 
+   padding-left: 1rem;
+   padding-right: 1rem;
+}

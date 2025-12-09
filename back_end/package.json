@@ -1,0 +1,38 @@
+{
+  "name": "website_nvidia_expressnodejs_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "ts-node src/scripts/loadDB.ts",
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@datastax/astra-db-ts": "^1.5.0",
+    "@langchain/community": "^0.3.49",
+    "@langchain/textsplitters": "^0.1.0",
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "cloudinary": "^2.8.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^6.2.2",
+    "multer": "^1.4.5-lts.2",
+    "multer-storage-cloudinary": "^2.2.1",
+    "nodemailer": "^7.0.11",
+    "openai": "^4.62.1",
+    "puppeteer": "^22.15.0",
+    "socket.io": "^4.8.1"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "@types/node": "^24.1.0",
+    "ts-node": "^10.9.2"
+  }
+}

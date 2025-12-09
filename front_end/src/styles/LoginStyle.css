@@ -1,0 +1,126 @@
+/* Nút Back to Login */
+.btn-back {
+    color: #9ca3af;
+    border: 1px solid #374151;
+    background: transparent;
+    font-size: 0.85rem;
+    padding: 0.25rem 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.btn-back:hover {
+    color: white;
+    border-color: #6b7280;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.form-label {
+    display: block !important; /* QUAN TRỌNG: Bắt buộc label chiếm cả dòng */
+    color: #9ca3af;       
+    font-size: 0.85rem;   
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+.dark-input {
+    display: block;        /* Đảm bảo input cũng là dạng khối */
+    width: 100%;           /* Chiếm hết chiều rộng */
+    background-color: #111827 !important; 
+    border: 1px solid #374151 !important; 
+    color: #f3f4f6 !important;            
+    padding: 0.6rem 0.75rem;
+    font-size: 0.95rem;
+    border-radius: 0.375rem;
+}
+
+.dark-input::placeholder {
+    color: #6b7280; /* Màu placeholder tối hơn một chút */
+}
+
+/* Focus cho input thường (không nằm trong group) */
+.dark-input:focus {
+    border-color: #14b8a6 !important; /* Viền xanh Teal khi focus */
+    box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2) !important; /* Hiệu ứng tỏa sáng nhẹ */
+    background-color: #111827 !important;
+    outline: none;
+}
+
+/* --- Xử lý Input Group (Phần Mật khẩu + Con mắt) --- */
+
+/* 1. Input mật khẩu: Bỏ viền phải để nối liền với nút */
+.input-group > .dark-input {
+    width: 1% !important; /* Quan trọng: Bootstrap dùng 1% để flex-grow hoạt động */
+    flex: 1 1 auto;
+    border-right: none !important; /* Giữ nguyên việc bỏ viền phải */
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+}
+
+/* Đảm bảo nút bấm không bị co lại */
+.input-group > .btn-outline-secondary {
+    white-space: nowrap;
+}
+
+/* Khi di chuột vào nút, giữ nguyên màu nền và viền */
+.input-group > .btn-outline-secondary:hover {
+    background-color: #111827 !important; 
+    border-color: #374151 !important;
+    color: #f3f4f6 !important; /* Làm sáng icon lên một chút */
+}
+
+/* 3. Hiệu ứng Focus đồng bộ (Làm cho cả cụm sáng lên như 1 khối) */
+
+/* Khi focus vào input hoặc nút, đổi màu viền CẢ HAI thành màu xanh Teal và tắt shadow riêng lẻ */
+.input-group:focus-within > .dark-input,
+.input-group:focus-within > .btn-outline-secondary {
+    border-color: #14b8a6 !important;
+    box-shadow: none !important; 
+}
+
+/* Tạo shadow và viền bao quanh TOÀN BỘ group khi focus */
+.input-group:focus-within {
+    box-shadow: 0 0 0 2px rgba(20, 184, 166, 0.2);
+    border-radius: 0.375rem;
+    border: 1px solid #14b8a6 !important; /* Đảm bảo viền ngoài cùng cũng đổi màu */
+}
+
+.btn-teal {
+    display: block;
+    background-color: #0d9488; /* Màu xanh Teal đậm */
+    border: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background-color 0.2s;
+}
+
+.btn-teal:hover {
+    background-color: #0f766e; /* Màu đậm hơn khi hover */
+}
+
+/* Bổ sung cho login page */
+.forgot-link {
+    font-size: 0.8rem;
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.forgot-link:hover {
+    color: #9ca3af; 
+}
+
+.teal-link {
+    color: #14b8a6;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin-left: 0.25rem;
+    transition: color 0.2s;
+}
+.teal-link:hover {
+    color: #2dd4bf; 
+    text-decoration: underline;
+}
