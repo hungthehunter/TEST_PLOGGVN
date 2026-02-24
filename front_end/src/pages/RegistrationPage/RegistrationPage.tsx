@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 // Đảm bảo đường dẫn import đúng file UserService.ts
-import * as UserService from "../../services/UserService"; 
+import * as UserService from "../../services/ModalService"; 
 import "../../styles/RegistrationStyle.css";
-
-
-  const navigate = useNavigate(); 
 
 const RegistrationPage: React.FC = () => {
   // State cho UI toggle
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState<boolean>(false);
+  const navigator = useNavigate();
   
   // State cho form data
   const [firstName, setFirstName] = useState<string>("");
@@ -21,7 +19,6 @@ const RegistrationPage: React.FC = () => {
   const [confirmPassword, setConfirmPassword] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
 
-  const handleNavigateLogin =() => navigate("/")
 
   const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -43,7 +40,7 @@ const RegistrationPage: React.FC = () => {
       const res = await UserService.signupUser(userData);
       if (res?.status === "OK" || (res as any)?.data) { 
         alert("Account created successfully!");
-        handleNavigateLogin()
+        navigator("/login");
       } else {
         alert(res?.message || "Registration failed");
       }

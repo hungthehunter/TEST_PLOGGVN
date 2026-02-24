@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"; 
-import * as UserService from "../../services/UserService"; 
+import * as UserService from "../../services/ModalService"; 
 import "../../styles/LoginStyle.css";
 
 const LoginPage: React.FC = () => {
@@ -10,10 +10,7 @@ const LoginPage: React.FC = () => {
   const [password, setPassword] = useState<string>(""); 
   const [loading, setLoading] = useState<boolean>(false); 
   
-  const navigate = useNavigate(); 
-
-  const handleNavigateRegistration = () => navigate("/");
-
+  const navigator = useNavigate(); 
 
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault(); 
@@ -30,7 +27,6 @@ const LoginPage: React.FC = () => {
         } else if (res.access_token) {
   
         }
-        
         alert("Login successful!");
       } else {
         alert(res?.message || "Login failed");
@@ -109,7 +105,7 @@ const LoginPage: React.FC = () => {
                 Don't have an account?{" "}
               </div>
               <div style={{ display: "flex", justifyContent: "center" }} >
-                <span onClick={handleNavigateRegistration} className="teal-link" style={{cursor: 'pointer'}}>
+                <span onClick={() => navigator("/signUp")} className="teal-link" style={{cursor: 'pointer'}}>
                   Sign up
                 </span>
               </div>

@@ -1,15 +1,13 @@
 
 import React from 'react';
 import "./App.css";
-// import { routes } from "./routes/index";
 import {routes} from "./routes/index.js"
-import { BrowserRouter as Router, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router-dom";
 import DefaultComponent from "./components/DefaultComponent/DefaultComponent.tsx";
 
 function App() {
   return (
     <>
-      <Router>
         <Routes>
           {routes.map((route) => {
             const Page = route.page;
@@ -30,7 +28,6 @@ function App() {
             );
           })}
         </Routes>
-      </Router>
     </>
   );
 }

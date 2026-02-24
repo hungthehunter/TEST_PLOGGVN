@@ -4,9 +4,10 @@ import RegistrationPage from "../pages/RegistrationPage/RegistrationPage.tsx";
 import LoginPage from "../pages/LoginPage/LoginPage.tsx"
 import ThankYouPage from "../pages/ThankYouPage/ThankYouPage.tsx";
 import EmailTemplate from "../pages/EmailTemplate/EmailTemplate.tsx";
+
 export const routes=[
     {
-        path:"/",
+        path:"/signUp",
         page: RegistrationPage,
         isShowHeader: true,
     },
